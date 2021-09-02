@@ -47,7 +47,7 @@ const displayBookDetails = (books) => {
         <div class="container card h-100">
                      <img width="250px" height="250px" src=" https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h4 class="card-title">Book Name: ${book.title}</h4>
+                    <h5 class="card-title">Book Name: ${book.title}</h5>
                     <p class="card-text">Authors: ${book.author_name}</p>
                     <p class="card-text">Publisher: ${book.publisher} </p>
 
