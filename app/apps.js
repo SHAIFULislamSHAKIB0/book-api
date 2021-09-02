@@ -1,7 +1,7 @@
 const searchBook = () => {
     const searchField = document.getElementById('search-field');
     searchText = searchField.value;
-    // console.log(searchText)
+
     searchField.value = '';
 
     const url = `https://openlibrary.org/search.json?q=${searchText}`;
@@ -13,10 +13,10 @@ const searchBook = () => {
         })
 
 }
+// Displaying total search result 
 
 const displaySearchResult = (data) => {
-    // console.log(data.numFound)
-    // console.log(data.docs.length)
+
     const resultFound = document.getElementById('result-found');
 
     // Error message for hijibijii hijibigii input 
@@ -34,17 +34,20 @@ const displaySearchResult = (data) => {
 
 }
 
+// Displaying Books and details
+
 const displayBookDetails = (books) => {
-    // console.log(books.docs);
+    console.log(books);
     const searchResult = document.getElementById('search-result');
     searchResult.textContent = '';
 
+    // Using forEach
     books?.forEach(book => {
-        console.log(book);
+
         const div = document.createElement('div');
         div.classList.add('col');
         div.innerHTML = `
-        <div class="container card h-100">
+        <div class="container card h-100 bg-success text-white p-2 mt-3">
                      <img width="250px" height="250px" src=" https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">Book Name: ${book.title}</h5>
